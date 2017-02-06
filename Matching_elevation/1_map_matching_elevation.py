@@ -1,6 +1,4 @@
-'''
-	CS513 Assignment 3: Probe data map matching
-'''
+
 # Getting Link and Probe classes to store data in a structured manner
 # Arg parse is to parse commandline arguments
 from link import Link

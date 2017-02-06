@@ -1,0 +1,15 @@
+Final count is: 498
+Final train tweet count is: 3200
+Final test tweet count is: 2200
+Final Cluster Number: 0/nAverage number of users per community: 122.500000Positive Instance Count: 1131
+Negative Instance Count: 123
+Non-negative-non-positive Instance Count: 20
+Positive Instance: b"@daisygriffith Hi Daisy. We'd like to help. Are you getting a specific error message? Give us the exact wording &amp; we'll look into it."
+Negative Instance: b'@odileharter Hmm. Have you tried following these steps to regain access to the account: https://t.co/58jfArmz4G? Keep us posted.'
+Non-negative-non-positive Instance: b"From apps to games to music to TV, press play on this year's biggest @GooglePlay hits: https://t.co/3Sn5qFTnNq https://t.co/KFWiphS0qA"
+Positive Instance Count: 1338
+Negative Instance Count: 95
+Non-negative-non-positive Instance Count: 51
+Positive Instance: b'@zoeanneharper If we can be of assistance, please DM us your contact information and VIN.'
+Negative Instance: b'Between thousands of @LEGO_Group blocks lies the piloted #AudiRS7 concept\xe2\x80\x94together, they are \xe2\x80\x9cThe Extra Hour,\xe2\x80\x9d on d\xe2\x80\xa6 https://t.co/BOqCyfJDsE'
+Non-negative-non-positive Instance: b"@KevinDFernandez We're sorry to hear of this experience. Have you spoken with the Remediation team in regard to the delays?"

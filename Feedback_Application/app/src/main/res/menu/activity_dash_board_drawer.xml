@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/dashboard"
+            android:icon="@drawable/home_outline"
+            android:title="Dashboard"/>
+        <item
+            android:id="@+id/qr"
+            android:icon="@drawable/qrcode_scan"
+            android:title="Scan QR"/>
+        <item android:title="Bookmarks" android:id="@+id/bookmark" android:icon="@drawable/bookmark"/>
+        <item
+            android:id="@+id/my_stores"
+            android:icon="@drawable/domain"
+            android:title="My Store"/>
+        <item
+            android:id="@+id/myprofile"
+            android:icon="@drawable/account_outline"
+            android:title="My Profile"/>
+
+        <item
+            android:id="@+id/logout"
+            android:icon="@drawable/logout_variant"
+            android:title="Log Out"/>
+        </group>
+    <group android:checkableBehavior="single">
+        license
+        <item
+            android:id="@+id/license"
+            android:icon="@drawable/information_outline"
+            android:title="3rd Party License"/>
+        <item
+            android:id="@+id/TandC"
+            android:icon="@drawable/information_outline"
+            android:title="Terms and Conditions"/>
+        <item
+            android:id="@+id/aboutUs"
+            android:icon="@drawable/information_outline"
+            android:title="About Us"/>
+    </group>
+
+
+</menu>

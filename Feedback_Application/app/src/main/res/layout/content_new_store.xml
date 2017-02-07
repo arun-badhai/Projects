@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_new_store2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.cs442.group5.feedback.NewStoreActivity"
+    tools:showIn="@layout/activity_new_store">
+    <android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            app:srcCompat="@mipmap/ic_launcher"
+            android:id="@+id/imageView_imgurl"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:onClick="onChangeImage"/>
+
+        <TextView
+            android:text="Drop a pin to save Coordinates"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView17"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/imageView_imgurl"/>
+
+        <include
+            android:id="@+id/include_map"
+            android:layout_width="0dp"
+            layout="@layout/fragment_new_store_map"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView17"
+            android:layout_marginTop="8dp"
+            app:layout_constraintHorizontal_bias="1.0"
+            android:layout_height="200dp"/>
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/editText_name"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include_map"
+            android:hint="Please enter store name"
+            />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:ems="10"
+            android:id="@+id/editText_address"
+            android:hint="Please enter address"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/editText_name"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/editText_Location"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/editText_address"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:hint="Location"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/editText_zipcode"
+            android:hint="Zipcode"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/editText_Location"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberSigned"
+            android:ems="10"
+            android:id="@+id/editText_phone_no"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/editText_zipcode"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:hint="Phone Number"/>
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:id="@+id/editText_emailid"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText_phone_no"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:hint="Email ID"
+            app:layout_constraintHorizontal_bias="1.0"/>
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/editText_website"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/editText_emailid"
+            android:hint="Website"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v4.widget.NestedScrollView>

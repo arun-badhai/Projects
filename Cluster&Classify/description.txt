@@ -11,10 +11,10 @@ Then, I have used girwan-newman approach to detect the communities, which is a r
 This is done by finding the best edge to be removed and accordingly communities are formed.
 
 3. classify.py
-In this, I have collected the afinn data i.e. downloaded it and this consists of all the positive and negative words which will be used to classify a tweet as negative or positive.
+In this, I have collected the afinn data i.e. downloaded it and this consists of all the positive and negative words (then performed a survey using these words to get a count) which will be used to classify a tweet as negative or positive.
 The tweets are collected in collect.py and all these tweets are stored in two files one for training and another for testing.
 Logic:
-Only consider those tweets which could be categorized as positive or negative using the tweets and afinn data.
+Only consider those tweets which could be categorized as positive or negative using the tweets and collected data.
 Categorize the tweets positive,negative and non-negative-non-positive and for doing so I have created a vocab consisting of all the intersected words. This vocab is used even for testing data.
 (the non-negative-non-positive tweets are the one's having same negative and positive word counts)
 Logistic regression classifier is used for classification.(Similar to the one explained in class)

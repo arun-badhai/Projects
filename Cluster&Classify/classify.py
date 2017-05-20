@@ -1,7 +1,4 @@
-
-# coding: utf-8
-
-# In[44]:
+# Classify
 
 import requests
 from pprint import pprint
@@ -25,47 +22,39 @@ from sklearn.cross_validation import KFold
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, confusion_matrix
 
+
+# Twitter's Authentication key and Access token
 consumer_key = 'M8tppsmHAIS2DMApVoZupkTgS'
 consumer_secret = 'xEBGF0xdQFn3svoCn9gwlJjRHzktW5mip2sRrFs6pdqdA7Y0xP'
 access_token = '296141476-hIIrnKf5Sqtah5iF8qdGJpGT3yhFlvxTLUC5Bkzi'
 access_token_secret = 'hnJfgnvZiQr0GnBstvvpvB8gjSXB0KcfR9NbjncUa44UV'
 
-
-# In[45]:
-
+# Returns an instance of TwitterAPI using the tokens entered above
 def get_twitter():
     return TwitterAPI(consumer_key, consumer_secret, access_token, access_token_secret)
 
 
-# In[46]:
-
-def download():
-    url = urlopen('http://www2.compute.dtu.dk/~faan/data/AFINN.zip')
-    zipfile = ZipFile(BytesIO(url.read()))
-    afinn_file = zipfile.open('AFINN/AFINN-111.txt')
-    afinn = dict()
-    for line in afinn_file:
+# Reads data from the file
+def readData():
+    info = open("info.txt", "r")
+    info2 = dict()
+    for line in info:
         parts = line.strip().split()
         if len(parts) == 2:
-            afinn[parts[0].decode("utf-8")] = int(parts[1])
-    return afinn
+            info2[parts[0]] = int(parts[1])
+    return info2
 
-
-# In[47]:
-
-#Lecture 13
+# Create vocabulary (dict from term-->index)
 def make_vocabulary(tokens_list):
     vocabulary = defaultdict(lambda: len(vocabulary))
     for tokens in tokens_list:
         for token in tokens:
-            vocabulary[token]
+            vocabulary[token] # looking up a key; defaultdict takes care of assigning it a value.
     print('%d unique terms in vocabulary' % len(vocabulary))
     return vocabulary
 
-
-# In[48]:
-
-#Lecture 13
+# Create feature matrix 
+# X[i,j] is the frequency of term j in tweet i
 def make_feature_matrix(tokens_list, vocabulary):
     X = lil_matrix((len(tokens_list), len(vocabulary)))
     for i, tokens in enumerate(tokens_list):
@@ -75,40 +64,34 @@ def make_feature_matrix(tokens_list, vocabulary):
                 X[i,j] += 1
     return X.tocsr()
 
-
-# In[23]:
-
+# Load tweets
 def load_tweets(twitter):
     pkl_file = open('tweetsfinal.pkl', 'rb')
     tweets = pickle.load(pkl_file)
     pkl_file.close()
     return tweets
 
-
-# In[24]:
-
+# Load tweets
 def load_test_tweets(twitter):
     pkl_file = open('tweetstest.pkl', 'rb')
     tweets = pickle.load(pkl_file)
     pkl_file.close()
     return tweets
 
-
-# In[53]:
-
+# Classification	
 def get_data(tweets, vocab = None):
-    afinn = download()
+    info2 = readData()
     new_val = []
     positives = []
     negatives = []
     non_pos_non_neg = []
-    tokens_list = [set(tokenize(tw)).intersection(afinn.keys()) for tw in tweets]
+    tokens_list = [set(tokenize(tw)).intersection(info2.keys()) for tw in tweets]
     tokens_list = [val for val in tokens_list if val!= set()]
     if vocab == None:
         vocab = make_vocabulary(tokens_list)
     val = make_feature_matrix(tokens_list, vocab)
     for token_list, tweet in zip(tokens_list, tweets):
-        pos, neg = afinn_sentiment2(token_list, afinn)
+        pos, neg = data_sentiment2(token_list, info2)
         if pos > neg:
             new_val.append(1)
             positives.append(tweet)
@@ -118,15 +101,10 @@ def get_data(tweets, vocab = None):
         else:
             new_val.append(0)
             non_pos_non_neg.append(tweet)
-
-    #val = np.asarray(val)
     new_val = np.asarray(new_val)      
     return val.A, new_val, vocab, positives, negatives, non_pos_non_neg  
 
-
-# In[33]:
-
-#Lecture 13
+# Average testing accuracy over k folds of cross-validation	
 def do_cross_val(X, y, nfolds):
     cv = KFold(len(y), nfolds)
     accuracies = []
@@ -139,26 +117,21 @@ def do_cross_val(X, y, nfolds):
     avg = np.mean(accuracies)
     return avg
 
-
-# In[28]:
-
-def afinn_sentiment2(terms, afinn, verbose=False):
+# Negative and positive weight
+def data_sentiment2(terms, info2, verbose=False):
     pos = 0
     neg = 0
     for t in terms:
-        if t in afinn:
+        if t in info2:
             if verbose:
-                print('\t%s=%d' % (t, afinn[t]))
-            if afinn[t] > 0:
-                pos += afinn[t]
+                print('\t%s=%d' % (t, info2[t]))
+            if info2[t] > 0:
+                pos += info2[t]
             else:
-                neg += -1 * afinn[t]
+                neg += -1 * info2[t]
     return pos, neg
 
-
-# In[30]:
-
-#Lecture 13
+# Create tokens from the given string
 def tokenize(string):
     if not string:
         return []
@@ -170,9 +143,7 @@ def tokenize(string):
   
     return tokens
 
-
-# In[77]:
-
+	
 def main():
     twitter = get_twitter()
     tweets = load_tweets(twitter)

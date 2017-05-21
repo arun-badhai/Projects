@@ -20,10 +20,6 @@ import com.cs442.group5.feedback.utils.Libs;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by sauja7 on 11/26/16.
- */
-
 public class UserIntentService extends IntentService {
 	private static final String TAG = "UserIntentService";
 	public static final String UPDATE_USER = "updateUser";

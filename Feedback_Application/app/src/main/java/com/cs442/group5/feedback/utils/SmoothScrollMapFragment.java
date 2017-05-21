@@ -1,13 +1,5 @@
 package com.cs442.group5.feedback.utils;
 
-/**
- * <h1>Smooth Scroll for a map fragment inside a scrollview</h1>
- *
- * @author  Saurabh Jadhav
- * @version 1.0
- * @since   2016-11-6
- */
-
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;

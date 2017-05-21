@@ -15,9 +15,6 @@ import com.cs442.group5.feedback.R;
 
 import java.util.ArrayList;
 
-/**
- * Created by shivani on 11/9/2016.
- */
 public class CustomSwipeAdapter extends PagerAdapter {
 	private static final String TAG="CustomSwipeAdapter";
     private  Context context;

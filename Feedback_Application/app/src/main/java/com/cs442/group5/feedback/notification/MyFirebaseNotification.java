@@ -21,10 +21,6 @@ import com.google.firebase.messaging.RemoteMessage;
 
 import java.util.Map;
 
-/**
- * Created by sauja7 on 11/15/16.
- */
-
 public class MyFirebaseNotification extends FirebaseMessagingService {
 
 	private static final String TAG = "MyFirebaseMsgService";

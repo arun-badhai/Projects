@@ -1,9 +1,5 @@
 package com.cs442.group5.feedback.model;
 
-/**
- * Created by aqueelmiqdad on 11/11/16.
- */
-
 public class User {
 
 	private long id;

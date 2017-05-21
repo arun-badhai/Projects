@@ -1,11 +1,6 @@
 package com.cs442.group5.feedback.model;
 
-/**
- * Created by sauja7 on 11/13/16.
- */
-
-
-		import java.sql.Timestamp;
+import java.sql.Timestamp;
 
 public class Review implements Comparable<Review>{
 	int id;

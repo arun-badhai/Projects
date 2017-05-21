@@ -5,10 +5,6 @@ import android.support.v4.content.ContextCompat;
 
 import com.cs442.group5.feedback.R;
 
-/**
- * Created by sauja7 on 11/13/16.
- */
-
 public class RatingColor {
 
 	public static int getRatingColor(float rating, Context context)

@@ -26,10 +26,6 @@ import com.google.gson.reflect.TypeToken;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by sauja7 on 11/26/16.
- */
-
 public class StoreIntentService extends IntentService {
 	private static final String TAG = "StoreIntentService";
 	Context context;

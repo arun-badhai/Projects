@@ -1,1 +1,25 @@
 
+Description:
+1. collect.py
+In this, I have collected few usernames of the people who are followed by Leonardo Dicaprio and then have collected few more usernames which are followed by those earlier found people. (get_friends() method will do this)
+Then, I have collected tweets for training data and these tweets are from different brand twitter accounts.(get_train_tweets() method will do this)
+Then, I have collected tweets for testing data and these tweets are from different car brands twitter accounts. (get_test_tweets() method will do this)
+There is a text file created which will store all the usernames and their respective friend names.(edges.txt is the file)
+
+2. cluster.py
+In this, I have used the previously created text file.
+Then, I have used girwan-newman approach to detect the communities, which is a recurssive process. I have set the limit to four  so that it will recurse until four communities are formed.
+This is done by finding the best edge to be removed and accordingly communities are formed.
+
+3. classify.py
+In this, I have collected the afinn data i.e. downloaded it and this consists of all the positive and negative words (then performed a survey using these words to get a count) which will be used to classify a tweet as negative or positive.
+The tweets are collected in collect.py and all these tweets are stored in two files one for training and another for testing.
+Logic:
+Only consider those tweets which could be categorized as positive or negative using the tweets and collected data.
+Categorize the tweets positive,negative and non-negative-non-positive and for doing so I have created a vocab consisting of all the intersected words. This vocab is used even for testing data.
+(the non-negative-non-positive tweets are the one's having same negative and positive word counts)
+Logistic regression classifier is used for classification.(Similar to the one explained in class)
+Then, the accuracy for both training and testing data is calculated.
+
+4. summarize.py
+This will include all the required data.

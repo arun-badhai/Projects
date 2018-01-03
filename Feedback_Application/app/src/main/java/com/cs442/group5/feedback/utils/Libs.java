@@ -17,10 +17,6 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 
-/**
- * Created by sauja7 on 11/14/16.
- */
-
 public  class Libs extends Application {
 	static FirebaseAuth firebaseAuth;
 	static FirebaseDatabase firebaseDatabase;

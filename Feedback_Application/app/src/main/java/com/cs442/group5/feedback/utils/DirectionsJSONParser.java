@@ -1,10 +1,5 @@
 package com.cs442.group5.feedback.utils;
 
-
-/**
- * Created by Prajakta on 11/6/2016.
- */
-
 import com.google.android.gms.maps.model.LatLng;
 
 import org.json.JSONArray;

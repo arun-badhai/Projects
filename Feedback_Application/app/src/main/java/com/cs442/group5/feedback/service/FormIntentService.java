@@ -24,10 +24,6 @@ import com.cs442.group5.feedback.utils.Libs;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by sauja7 on 12/2/16.
- */
-
 public class FormIntentService extends IntentService {
 	private static final String TAG = "FormIntentService";
 	public static final String CREATE_FORM = "createForm";
@@ -63,8 +59,6 @@ public class FormIntentService extends IntentService {
 	}
 	public void createForm(final String storeid,final String formName, final String jsonItems)
 	{
-
-
 		final String url=context.getString(R.string.server_url)+"/form/addForm";
 		StringRequest postRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>(){
 			@Override

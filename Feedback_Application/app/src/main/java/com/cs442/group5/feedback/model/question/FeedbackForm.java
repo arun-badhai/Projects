@@ -27,10 +27,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by sauja7 on 11/1/16.
- */
-
 public class FeedbackForm {
 	long id;
 	String name;

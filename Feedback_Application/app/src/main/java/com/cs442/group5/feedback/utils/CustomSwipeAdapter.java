@@ -15,9 +15,6 @@ import com.cs442.group5.feedback.R;
 
 import java.util.ArrayList;
 
-/**
- * Created by shivani on 11/9/2016.
- */
 public class CustomSwipeAdapter extends PagerAdapter {
 	private static final String TAG="CustomSwipeAdapter";
     private  Context context;
@@ -29,7 +26,6 @@ public class CustomSwipeAdapter extends PagerAdapter {
     public CustomSwipeAdapter(Context context, ArrayList<String> IMAGES) {
         this.IMAGES = IMAGES;
         this.context = context;
-        System.out.println("AAAAAAAAA"+IMAGES);
     }
 
     @Override
@@ -57,7 +53,6 @@ public class CustomSwipeAdapter extends PagerAdapter {
 		((ViewPager) container).addView(view);
 		final ImageView img = (ImageView) view.findViewById(R.id.image_view);
 		Glide.with(context).load(IMAGES.get(position)).asBitmap().into(img);
-		//Picasso.with(context).load().into(img);
 		return view;
 	}
 

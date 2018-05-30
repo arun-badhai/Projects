@@ -2,7 +2,6 @@
 <html>
 <head>
     <link rel="stylesheet" href="Modal.css">
-    <script type="text/javascript" src="Contact.js"></script>
 </head>
 <body>
     <div class="container">
@@ -21,8 +20,10 @@
                     <label for="phone">Contact</label>
                     <input type="text" id="phone" name="phone" placeholder="Your contact number..">
                     <div class="topButton">
-                        <input class="save" type="submit" value="Submit" onclick="saveEdit()">
-                        <input class="save" type="submit" value="Cancel" onclick="cancelEdit()">
+                        <input class="save" type="submit" value="Submit">
+                        <input class="button" type="button" value="Cancel" onclick="history.go(-1);"
+                               style="background-color: #45a049; color: white; padding: 12px 20px;
+                               border: none; align-content: center; cursor: pointer; margin-bottom: 10px">
                     </div>
                 </form>
             </div>
